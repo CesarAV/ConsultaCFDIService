@@ -84,13 +84,13 @@ class ValidaCFDI {
             $rfc_receptor = $rfc_receptor->item(0);
 
             // extraer TOTAL de factura:
-            $total = $xml->getElementsByTagNameNS('http://www.sat.gob.mx/cfd/3','Comprobante');
+            $total = $xml->getElementsByTagNameNS('http://www.sat.gob.mx/cfd/4','Comprobante');
             $total = $total->item(0);
 
             return array(
-                're' => $rfc_emisor->getAttribute('rfc'),
-                'rr' => $rfc_receptor->getAttribute('rfc'),
-                'tt' => $total->getAttribute('total'),
+                're' => $rfc_emisor->getAttribute('Rfc'),
+                'rr' => $rfc_receptor->getAttribute('Rfc'),
+                'tt' => $total->getAttribute('Total'),
                 'id' => $tfd->getAttribute('UUID'),
             );
 

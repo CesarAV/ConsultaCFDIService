@@ -44,7 +44,7 @@ class LecturaXML extends DOMDocument {
      * el objeto de esta clase.
      *
      * @access public
-     * @param  callback  $callback
+     * @param  callable  $callback
      * @return mixed
      */
     public function call($callback)

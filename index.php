@@ -4,7 +4,7 @@
     require_once __DIR__ . '/src/LecturaXML.php';
     require_once __DIR__ . '/src/ValidaCFDI.php';
 
-    function validarFactua($cfdi = null)
+    function validarFactura($cfdi = null)
     {
         try {
 
@@ -26,7 +26,7 @@
 
     if (validarArchivoEntrante('fact', 'text/xml') === true) {
         extract($_FILES['fact']);
-        $validacion = validarFactua($tmp_name);
+        $validacion = validarFactura($tmp_name);
         debug($validacion);
     }
 ?>
@@ -48,7 +48,7 @@
     <body>
 
         <form action="./index.php" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-            <label>Seleccióne XML factura: </label>
+            <label>Seleccione XML factura: </label>
             <input type="file" name="fact" value=""/>
             <br/>
             <input type="submit" value="Validar"/>
